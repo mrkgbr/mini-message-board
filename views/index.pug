@@ -10,7 +10,7 @@ block content
         | : 
         span !{message.user}
         | : 
-        span !{message.added}
+        span #{moment(message.added).format('MMMM Do YYYY, h:mm:ss a')}
 
     else
       li There are no messages.

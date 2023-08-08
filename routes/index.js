@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const { DateTime } = require("luxon");
 
 const messages = [
   {
@@ -16,7 +17,11 @@ const messages = [
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Message Board", messages: messages });
+  res.render("index", {
+    title: "Mini Message Board",
+    messages: messages,
+    moment: require("moment"),
+  });
 });
 
 router.get("/new", function (req, res, next) {
@@ -31,3 +36,5 @@ router.post("/new", function (req, res, next) {
 });
 
 module.exports = router;
+
+console.log(messages);

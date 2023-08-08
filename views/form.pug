@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/") Back to the home
+  form(action="/new", method="POST")
+    label(for="messageUser") Name:
+    input(type="text", name="messageUser", id="messageUser")
+    label(for="messageText") Message:
+    input(type="text", name="messageText", id="messageText")
+    button(type="submit") Send
